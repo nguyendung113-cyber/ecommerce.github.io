@@ -63,8 +63,8 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function view_products(){
-        $data = Product::all();
-        return view('admin.view_products',compact('data'));
+    public function view_product(){
+        $data = Product::paginate(3);
+        return view('admin.view_product',compact('data'));
     }
 }
